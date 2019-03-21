@@ -1,0 +1,212 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    background-color: #0a3d62;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.game-parent {
+    width: 600px;
+    max-width: 80%;
+    padding: 50px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.progress-parent {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 25px;
+    min-height: 25vh;
+}
+
+.progress-bar {
+    height: 25vh;
+    border-radius: 3px;
+    width: 5%;
+    margin-left: 3%;
+    margin-right: 15%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+    display: none;
+    transition: 0.2s;
+}
+
+.progress-bar.pa { background-color: #38ada9; }
+.progress-bar.pb { background-color: #78e08f; }
+.progress-bar.pc { background-color: #fa983a; }
+.progress-bar.pd { background-color: #e55039; }
+
+.progress-ape {
+    position: relative;
+    top: 72%;
+    left: -50%;
+    right: 50%;
+    width: 200%;
+    transform: 0.2s;
+}
+
+.countdown-parent {
+    background-color: #38ada9;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    position: relative;
+    margin-top: -50px;
+    margin-left: -50px;
+    margin-right: -50px;
+    padding-top: 25px;
+    padding-bottom: 1px;
+    margin-bottom: 20px;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+.highlight {
+    background-color: #d5d9e0;
+}
+
+.highlight-wrong {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+#countdown {
+    margin-top: 0;
+}
+
+#excerpt {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 3px;
+    padding: 25px;
+    line-height: 1.5em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#text_input {
+    display: inline-block;
+    font-size: 1.5em;
+    padding: 0.3em;
+    border-radius: 3px;
+    border: 1px solid #38ada9;
+    border-right: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.input-parent {
+    text-align: center;
+}
+
+.wpm-parent {
+    display: inline-block;
+    background-color: #38ada9;
+    height: 45.38px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    font-weight: bold;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    margin-left: -4px;
+}
+
+.end-buttons {
+    display: none;
+}
+
+.game-box {
+    position: relative;
+    left: 100%;
+    width: 200%;
+    text-align: center;
+    border-radius: 3px;
+    background-color: white;
+    padding: 0.4rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    word-break: break-all;
+}
+
+.game-speed {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.game-box.pa { background-color: rgba(56,173,169, 0.15); }
+.game-box.pb { background-color: rgba(120,224,143, 0.15); }
+.game-box.pc { background-color: rgba(250,152,58, 0.15); }
+.game-box.pd { background-color: rgba(229,80,57, 0.15); }
+
+.game-speed.pa { color: #38ada9; }
+.game-speed.pb { color: #78e08f; }
+.game-speed.pc { color: #fa983a; }
+.game-speed.pd { color: #e55039; }
+
+.game-name {
+    display: inline-block;
+    text-align: left;
+}
+
+.button-m,
+.button-a,
+.button-w {
+    display: inline-block;
+    background-color: #38ada9;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: -4px;
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 1px solid #38ada9;
+    font-size: 1rem;
+    padding: 0.67rem;
+    text-decoration: none;
+    transition: .4s;
+}
+
+.button-m:hover,
+.button-a:hover {
+    background-color: rgba(56, 173, 169, 0.75);
+    color: white;
+}
+
+.button-a {
+    background: none;
+    color: #38ada9;
+    margin-right: 0.5rem;
+}
+
+.button-w {
+    background: none;
+    color: white;
+    border-color: white;
+    margin-top: 1rem;
+}
+
+.button-w:hover {
+    background: white;
+    color: #38ada9;
+}
+
+.end-buttons {
+    margin: auto;
+    text-align: center;
+    margin-top: 1rem;
+}

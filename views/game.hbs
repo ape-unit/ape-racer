@@ -3,10 +3,87 @@
     <head>
         <meta charset="utf-8">
         <title>Game</title>
+        <script type="text/javascript" src="/js/colyseus.js"></script>
+        {{#if private}}
+            <script type="text/javascript" src="/js/game-private-script.js"></script>
+            {{#if create}}
+                <span id="created" data-create="{{create}}"></span>
+            {{/if}}
+        {{else}}
+            <script type="text/javascript" src="/js/game-script.js"></script>
+        {{/if}}    
+        <link rel="stylesheet" href="/styles/game.css">
     </head>
     <body>
-        <p>{{excerpt}}</p>
-        <br>
-        <textarea>Test area</textarea>
+        <span id="name" data-name="{{name}}"></span>
+        <div class="game-parent">
+            <div class="countdown-parent">
+                {{#if private}}
+                    {{#if create}}
+                        <div id="code_block">
+                            <span id="code"></span>
+                            <br>
+                            <button class="button-w" id="start_button">Start</button>
+                            <br>
+                            <br>
+                        </div>
+                    {{else}}
+                        <span id="code_entered" data-code="{{code}}"></span>
+                    {{/if}}
+                {{/if}}
+                <p id="countdown">Starting in <span id="countdown_number">10</span></p>
+            </div>
+            <!-- ape progress goes from 77% => -5% -->
+            <div class="progress-parent">
+                <div class="progress-bar pa" id="player0">
+                    <img class="progress-ape" src="/images/ape.png" id="player0">
+                    <div class="game-box pa">
+                        <span id="player0" class="game-speed pa"></span>
+                        <span id="name0" class="game-name">Test</span>
+                    </div>
+                </div>
+                <div class="progress-bar pb" id="player1" id="player0">
+                    <img class="progress-ape" src="/images/ape.png" id="player1">
+                    <div class="game-box pb">
+                        <span id="player1" class="game-speed pb"></span>
+                        <span id="name1" class="game-name"></span>
+                    </div>
+                </div>
+                <div class="progress-bar pc" id="player2">
+                    <img class="progress-ape" src="/images/ape.png" id="player2">
+                    <div class="game-box pc">
+                        <span id="player2" class="game-speed pc"></span>
+                        <span id="name2" class="game-name"></span>
+                    </div>
+                </div>
+                <div class="progress-bar pd" id="player3">
+                    <img class="progress-ape" src="/images/ape.png" id="player3">
+                    <div class="game-box pd">
+                        <span id="player3" class="game-speed pd"></span>
+                        <span id="name3" class="game-name"></span>
+                    </div>
+                </div>
+            </div>
+            <p id="excerpt"></p>
+            <br>
+            <div class="input-parent">
+                <input type="text" id="text_input">
+                <div class="wpm-parent">
+                    <p id="wpm"><span id="wpm_number">0</span> WPM</p>
+                </div>
+            </div>
+            <div id="end" class="end-buttons">
+                <a href="/home">
+                    <button class="button-a">
+                        Leave
+                    </button>
+                </a>
+                <a href="/game">
+                    <button class="button-m">
+                        Play again
+                    </button>
+                </a>
+            </div>
+        </div>
     </body>
 </html>
